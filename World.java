@@ -68,7 +68,12 @@ public class World extends JPanel {
     public World() {
         gameInProgress = false;
         paused = false;
-        highScoreTable = new HighScore();
+		try{
+			highScoreTable = new HighScore();
+		}
+		catch (Exception e){
+			System.out.println("High score broke, moving on");
+		}
         setUpGUI();
     }
 

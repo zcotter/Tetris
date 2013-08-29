@@ -20,6 +20,7 @@ public class HighScore {
     //TODO censor login
     private static final String ftpUserName = "";//CENSORED, replace null with username
     private static final String ftpPassword = "";//CENSORED, replace null with password
+	private static final String hsTxt = "@www.zachcotter.com/zachcotter.com/Tetris/classes/hs.txt";
 
     //TODO: change Integer to Integer Set to allow ties--> restructure as needed
 
@@ -31,7 +32,7 @@ public class HighScore {
         map = new TreeMap<Integer, String>();
         URL scoreFileUrl = null;
         try {
-            scoreFileUrl = new URL("ftp://" + ftpUserName + ":" + ftpPassword + "@www.zachcotter.com/zachcotter.com/Tetris/classes/hs.txt");
+            scoreFileUrl = new URL("ftp://" + ftpUserName + ":" + ftpPassword + hsTxt);
         }
         catch (MalformedURLException ex) {
             System.out.println(ex + "0");
@@ -74,8 +75,7 @@ public class HighScore {
         URL ftpurl = null;
         try {
             ftpurl =
-            new URL("ftp://" + ftpUserName + ":" + ftpPassword +
-                    "@www.zachcotter.com/zachcotter.com/Tetris/classes/hs.txt");
+            new URL("ftp://" + ftpUserName + ":" + ftpPassword + hsTxt);
         }
         catch (MalformedURLException ex) {
             System.out.println(ex + "1");
