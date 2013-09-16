@@ -693,9 +693,12 @@ public class World extends JPanel {
                         true);
                 return;
             }
+            /*
             highScoreTable.addListingIfEligible(nameField.getText(),
                                                 score);
             highScoreTable.save();
+            */
+            highScoreTable.postScore(new HighScoreEntry(nameField.getText(), score));
             this.dispose();
             this.setVisible(false);
 
@@ -724,7 +727,7 @@ public class World extends JPanel {
      * it opens a HighScoreFrame dialog.
      */
     private void checkHighScorer() {
-        if (score < highScoreTable.getMinimumToQualify()) {
+        if (score < highScoreTable.getValueToQualify()) {
             return;
         }
         if (highScoreFrame == null || highScoreFrame.isVisible() == false) {
